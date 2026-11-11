@@ -1,9 +1,12 @@
-pkgname=flairweb
+pkgname=flair-web
 pkgver=0.2.0
 pkgrel=1
 pkgdesc="Le navigateur web de la suite flair"
 arch=('x86_64' 'aarch64')
 license=('MIT')
+provides=('flairweb')
+conflicts=('flairweb')
+replaces=('flairweb')
 depends=('qt6-base' 'qt6-declarative' 'qt6-webengine' 'qt6-wayland' 'xdg-desktop-portal' 'xdg-utils')
 optdepends=('flair: afficher les téléchargements dans flair'
             'qt6-imageformats: icônes de sites en WebP et AVIF'

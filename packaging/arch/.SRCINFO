@@ -1,4 +1,4 @@
-pkgbase = flairweb
+pkgbase = flair-web
 	pkgdesc = Navigateur web de la suite flair : moteur au choix, bouclier anti-pistage, extensions Chrome
 	pkgver = 0.2.0
 	pkgrel = 1
@@ -17,7 +17,10 @@ pkgbase = flairweb
 	optdepends = flair: afficher les téléchargements dans flair
 	optdepends = qt6-imageformats: icônes de sites en WebP et AVIF
 	optdepends = qt6-svg: icônes de sites en SVG
+	provides = flairweb
+	conflicts = flairweb
+	replaces = flairweb
 	source = flairweb-0.2.0.tar.gz::https://github.com/vexlab-off/flairweb/archive/refs/tags/v0.2.0.tar.gz
 	sha256sums = f0463f735ec63af0259687c1f670edf23f8930f1b1291b8444e552ee2d3329da
 
-pkgname = flairweb
+pkgname = flair-web

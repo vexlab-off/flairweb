@@ -11,7 +11,25 @@ Une application de [la suite flair](https://vexlab-off.github.io/flair/), avec [
 
 ## Installer
 
-Sur Arch Linux et ses dérivées, avec le paquet de la
+Sur Arch Linux et ses dérivées, ajoute une fois le dépôt de la suite à la fin de
+`/etc/pacman.conf` :
+
+```ini
+[suite-flair]
+SigLevel = Optional TrustAll
+Server = https://vexlab-off.github.io/arch/$arch
+```
+
+puis :
+
+```sh
+sudo pacman -Syu flair-web         # cette app
+sudo pacman -Syu suite-flair   # les trois : flair, flair-code, flair-web
+```
+
+Les mises à jour arrivent ensuite avec `sudo pacman -Syu`.
+
+Sans le dépôt, avec le paquet de la
 [dernière version](https://github.com/vexlab-off/flairweb/releases/latest) :
 
 ```sh

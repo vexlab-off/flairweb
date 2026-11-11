@@ -1,23 +1,27 @@
 # Maintainer: vex <https://github.com/vexlab-off>
 # Paquet de publication : construit depuis l'archive de la version sur GitHub.
 # (pkgbuild/PKGBUILD, lui, construit le dossier local pour bin/install.)
-pkgname=flairweb
+pkgname=flair-web
+_repo=flairweb
 pkgver=0.2.0
 pkgrel=1
 pkgdesc="Navigateur web de la suite flair : moteur au choix, bouclier anti-pistage, extensions Chrome"
 arch=('x86_64' 'aarch64')
-url="https://github.com/vexlab-off/flairweb"
+url="https://github.com/vexlab-off/$_repo"
 license=('MIT')
+provides=('flairweb')
+conflicts=('flairweb')
+replaces=('flairweb')
 depends=('qt6-base' 'qt6-declarative' 'qt6-webengine' 'qt6-wayland' 'xdg-desktop-portal' 'xdg-utils')
 optdepends=('flair: afficher les téléchargements dans flair'
             'qt6-imageformats: icônes de sites en WebP et AVIF'
             'qt6-svg: icônes de sites en SVG')
 makedepends=('gcc' 'make')
-source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+source=("$_repo-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
 sha256sums=('f0463f735ec63af0259687c1f670edf23f8930f1b1291b8444e552ee2d3329da')
 
 build() {
-  cd "$pkgname-$pkgver"
+  cd "$_repo-$pkgver"
   mkdir -p build
   cd build
   qmake6 ../flairweb.pro
@@ -25,7 +29,7 @@ build() {
 }
 
 check() {
-  cd "$pkgname-$pkgver"
+  cd "$_repo-$pkgver"
   mkdir -p build/tests
   cd build/tests
   qmake6 ../../tests/flairweb_tests.pro
@@ -34,7 +38,7 @@ check() {
 }
 
 package() {
-  cd "$pkgname-$pkgver"
+  cd "$_repo-$pkgver"
   install -Dm755 build/flairweb "$pkgdir/usr/bin/flairweb"
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
