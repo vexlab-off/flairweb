@@ -1,0 +1,8 @@
+/build/
+/pkgbuild/pkg/
+/pkgbuild/src/
+*.pkg.tar.*
+/.code-review-graph/
+/packaging/arch/src/
+/packaging/arch/pkg/
+/packaging/arch/*.tar.gz

@@ -1,0 +1,23 @@
+[Desktop Entry]
+Type=Application
+Name=Flair Web
+GenericName=Navigateur web
+Comment=Le navigateur de la suite flair
+Keywords=web;navigateur;browser;internet;recherche;
+Exec=flairweb %U
+TryExec=flairweb
+Icon=/usr/share/icons/hicolor/scalable/apps/flairweb.svg
+Terminal=false
+Categories=Network;WebBrowser;
+MimeType=text/html;application/xhtml+xml;x-scheme-handler/http;x-scheme-handler/https;
+StartupWMClass=flairweb
+StartupNotify=true
+Actions=new-window;private;
+
+[Desktop Action new-window]
+Name=Nouvelle fenêtre
+Exec=flairweb --new-window
+
+[Desktop Action private]
+Name=Onglet privé
+Exec=flairweb --private

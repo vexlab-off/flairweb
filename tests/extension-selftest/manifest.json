@@ -1,0 +1,6 @@
+{ "manifest_version": 3, "name": "Flair self-test", "version": "1",
+  "permissions": ["contextMenus", "scripting", "tabs", "storage", "webNavigation"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "bg.js" },
+  "action": { "default_title": "Self-test" },
+  "content_scripts": [{ "matches": ["<all_urls>"], "js": ["cs.js"] }] }

@@ -1,0 +1,29 @@
+pkgname=flairweb
+pkgver=0.2.0
+pkgrel=1
+pkgdesc="Le navigateur web de la suite flair"
+arch=('x86_64' 'aarch64')
+license=('MIT')
+depends=('qt6-base' 'qt6-declarative' 'qt6-webengine' 'qt6-wayland' 'xdg-desktop-portal' 'xdg-utils')
+optdepends=('flair: afficher les téléchargements dans flair'
+            'qt6-imageformats: icônes de sites en WebP et AVIF'
+            'qt6-svg: icônes de sites en SVG')
+makedepends=('gcc' 'make')
+source=()
+sha256sums=()
+
+build() {
+  cd "$startdir/.."
+  ./bin/build
+}
+
+package() {
+  cd "$startdir/.."
+  install -Dm755 build/flairweb "$pkgdir/usr/bin/flairweb"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 "$startdir/flairweb.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/flairweb.svg"
+  for size in 16 24 32 48 64 128 256 512; do
+    install -Dm644 "$startdir/icons/flairweb-$size.png" "$pkgdir/usr/share/icons/hicolor/${size}x${size}/apps/flairweb.png"
+  done
+  install -Dm644 "$startdir/flairweb.desktop" "$pkgdir/usr/share/applications/flairweb.desktop"
+}
