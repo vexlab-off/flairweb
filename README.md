@@ -6,7 +6,7 @@ interface Qt Quick, tout se règle.
 
 ![Flair Web : la page de nouvel onglet avec les moteurs de recherche et les raccourcis](docs/capture.webp)
 
-Une application de [la suite flair](https://vexlab-off.github.io/mon-portfolio/flair/), avec [flair](https://github.com/vexlab-off/flair),
+Une application de [la suite flair](https://vexlab-off.github.io/flair/), avec [flair](https://github.com/vexlab-off/flair),
 [Flair Code](https://github.com/vexlab-off/flaircode) et [Flair Web](https://github.com/vexlab-off/flairweb).
 
 ## Installer
